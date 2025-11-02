@@ -136,5 +136,75 @@ section .container {
 
 .order-btn:hover {
    cursor: pointer;
+}
 
+.modal {
+   display: none;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 20px;
+   text-align: center;
+    background-color: whitesmoke;
+    shadow: 2px 2px 4px #000000;
+    border-radius: 5px;
+}
+
+.modal-title {
+    font-weight: 620;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.pay-btn {
+    background-color: #16DB99;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 14px 80px;
+    text-shadow: #000000;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.pay-btn:hover {
+    cursor: pointer;
+}
+
+input {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    padding-right: 100px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.payment-details button {
+    margin: 0 auto;
+}
+
+.place-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.place-order-title {
+    display: none;
+    text-align: center;
+    background-color: #90f4c5;
+    font-weight: 520;
+    padding: 16px 50px;
+    border-radius: 5px;
 }

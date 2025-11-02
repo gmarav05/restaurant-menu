@@ -2,6 +2,10 @@ import { menuArray } from "./data.js"
 
 const items = document.getElementById("menu-items")
 const complete = document.getElementById("complete-btn")
+const modalBtn = document.getElementById("modal")
+const payBtn = document.getElementById("pay-btn")
+const checkoutSection = document.getElementById("checkout-section")
+const placeOrder = document.getElementById("place-order-title") 
 
 menuArray.forEach(function(item) {
 
@@ -23,12 +27,14 @@ menuArray.forEach(function(item) {
 })
 
 
-complete.addEventListener('click', function(e){
-    
-
+complete.addEventListener('click', function(){
+    modalBtn.style.display = 'inline'
 })
 
-
+payBtn.addEventListener('click', function(){
+    checkoutSection.style.display = 'none'
+    placeOrder.style.display = 'inline'
+})
 
 
 
