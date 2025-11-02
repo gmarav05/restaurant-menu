@@ -1,6 +1,7 @@
 import { menuArray } from "./data.js"
 
 const items = document.getElementById("menu-items")
+const complete = document.getElementById("complete-btn")
 
 menuArray.forEach(function(item) {
 
@@ -21,6 +22,11 @@ menuArray.forEach(function(item) {
         <hr>  `
 })
 
+
+complete.addEventListener('click', function(e){
+    
+
+})
 
 
 
