@@ -1,23 +1,23 @@
-const menuArray = [
+export const menuArray = [
     {
         name: "Idly",
-        ingredients: ["pepperoni", "mushrom", "mozarella"],
+        ingredients: ["Urad dal", " Fenugreek seeds", " Raw rice."],
         id: 0,
-        price: 14,
-        emoji: "🍕"
+        price: 8,
+        emoji: "🍚"
     },
     {
         name: "Dosa",
-        ingredients: ["beef", "cheese", "lettuce"],
-        price: 12,
-        emoji: "🍔",
+        ingredients: ["Urad dal", " Fenugreek seeds", " idli rice."],
+        price: 10,
+        emoji: "🫔",
         id: 1
     },
         {
         name: "Meals",
-        ingredients: ["grain, hops, yeast, water"],
-        price: 12,
-        emoji: "🍺",
+        ingredients: ["Sambar,  Rasam,  Pappu,  Avakaya."],
+        price: 20,
+        emoji: "🍱",
         id: 2
     }
 ]
