@@ -2,9 +2,9 @@ export const menuArray = [
     {
         name: "Idli",
         ingredients: ["Urad dal", " Fenugreek seeds", " Raw rice."],
-        id: 0,
         price: 8,
-        emoji: "🍚"
+        emoji: "🍚",
+        id: 0
     },
     {
         name: "Dosa",

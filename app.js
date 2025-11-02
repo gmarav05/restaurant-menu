@@ -13,14 +13,14 @@ menuArray.forEach(function(item) {
         `<div class="card">
             <div class="emoji">${item.emoji}</div>    
 
-                <div class="item-details">
+                <div class="item-details" ${item.id}>
                     <h2 class="item-name">${item.name}</h2>
                     <p class="ingredients">${item.ingredients}</p>
                     <p class="price">₹${item.price}</p>
                 </div>
 
                 <div class="add-btn">
-                    <button class="add">+</button>
+                    <button class="add" data-item="${item.id}">+</button>
                 </div> 
         </div>
         <hr>  `
