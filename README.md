@@ -8,6 +8,10 @@ Built with simple HTML5, CSS3 and Vanilla JavaScript.
 
 ## Video
 
+
+https://github.com/user-attachments/assets/167aeab0-322c-40ba-abb8-106098b92f91
+
+
 ## Image
 ![](./demo.png) <br>
 
