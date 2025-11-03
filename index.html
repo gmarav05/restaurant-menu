@@ -53,17 +53,28 @@
     <div class="modal hidden" id="modal">
         <div class="modal-content">
             <h2 class="modal-title">Enter card details</h2>
-            <form id="payment-details">
-                <input placeholder="Enter your name" type="text" required id="name-el">
+            <form id="payment-details" >
 
-                <input placeholder="Enter card number" 
-                type="number" minlength=16 
-                maxlength=16 required name="fullname" id="card-el">
+                <input 
+                id="name"
+                required
+                placeholder="Enter your name" 
+                type="text" 
+               >
 
-                <input placeholder="Enter CVV" type="number" 
-                minlength="3" maxlength="4" required id="cvv-el">
+                <input 
+                id="card-number"
+                required
+                placeholder="Enter card number" 
+                type="number">
 
-                <button class="pay-btn" id="pay-btn" type="submit">Pay</button>
+                <input 
+                id="cvv"
+                required
+                placeholder="Enter CVV" 
+                type="number">
+
+                <button type="submit" class="pay-btn" id="pay-btn">Pay</button>
             </form>
         </div>
     </div>

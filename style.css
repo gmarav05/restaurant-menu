@@ -218,7 +218,6 @@ input[type=number] {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .place-order-title {
@@ -228,8 +227,4 @@ input[type=number] {
     font-weight: 520;
     padding: 16px 50px;
     border-radius: 5px;
-}
-
-.hidden {
-    display: none;
 }

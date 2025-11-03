@@ -3,13 +3,11 @@ import { menuArray } from "./data.js"
 const items = document.getElementById("menu-items")
 const complete = document.getElementById("complete-btn")
 const modalBtn = document.getElementById("modal")
-const payBtn = document.getElementById("pay-btn")
 const checkoutOrder = document.getElementById("checkout-order")
 const checkoutSection = document.getElementById("checkout-section")
 const placeOrder = document.getElementById("place-order-title")
 const totalOrderPrice = document.getElementById("total-price")
-
-const form = document.getElementById('payment-details')
+const form = document.getElementById("payment-details")
 
 let orderedItems = []
 
@@ -91,18 +89,11 @@ function totalPrice() {
 
 complete.addEventListener('click', function(){
     modalBtn.style.display = 'inline'
-     payBtn.disabled = true
 })
 
-form.addEventListener('input', function(){
-    if (form.checkValidity()) {
-        payBtn.disabled = false
-    }
-})
-
-payBtn.addEventListener('click', function(e){
+form.addEventListener('submit', function(e){
     e.preventDefault()
+    modalBtn.style.display = 'none'   
     checkoutOrder.style.display = 'none'
     placeOrder.style.display = 'inline'
-    modalBtn.style.display = 'none'   
 })
