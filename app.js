@@ -5,9 +5,8 @@ const complete = document.getElementById("complete-btn")
 const modalBtn = document.getElementById("modal")
 const payBtn = document.getElementById("pay-btn")
 const checkoutSection = document.getElementById("checkout-section")
-const placeOrder = document.getElementById("place-order-title") 
-// const itemsCheckout = document.getElementById("checkout-section")
-// let orderedItems = []
+const placeOrder = document.getElementById("place-order-title")
+const totalOrderPrice = document.getElementById("total-price")
 let orderedItems = []
 
 menuArray.forEach(function(item) {
@@ -29,78 +28,61 @@ menuArray.forEach(function(item) {
 })
   
 document.addEventListener('click', function(e) {
-    if (e.target.dataset.item) {
-        handleClick(Number(e.target.dataset.item))       
-    }
+    if (e.target.dataset.item) handleClick(Number(e.target.dataset.item))     
+    if (e.target.dataset.remove) removeItem(Number(e.target.dataset.remove))       
 })
 
 function handleClick(orderId) {
-   orderedItems = menuArray.filter(function(item) {
-        // console.log(typeof item.id)
-        // console.log(typeof orderId) 
 
-        if ( item.id === orderId) {
-            item.quantity++
-            return item
-        }
+    menuArray.forEach(function(item) {
+
+        if ( orderedItems.includes(orderId)) {
+            orderedItems.quantity++  
+        } else if ( item.id === orderId) {
+            orderedItems.push(item)   
+        } 
     })
-
-    getOrderItems(orderedItems)
-    // render(orderedItems)
+    renderItems()
 }
 
-function getOrderItems(orderedItems) {
-
+function renderItems() {
     let finalCheckout = ''
 
     orderedItems.forEach(function(item) {
-                                            //x ${item.quantity}
+
        finalCheckout += 
         `<div class="container card">
+        <div class="checkout-items" id="orderItems">
+            <p id="${item.id}">${item.name}</p> 
+        </div>
 
-            <div class="checkout-items" id="orderItems">
-                <p id="${item.id}">${item.name}</p> 
-            </div>
+        <button class="remove-item" data-remove="${item.id}"
+        id="remove-btn">remove</button>
 
-            <button class="remove-item" data-item="${item.id}">remove</button>
-
-            <div class="checkout-price">₹${item.price}</div>
-
+        <div class="checkout-price">₹${item.price}</div>
         </div>`
-
+        console.log(orderedItems)  
     })
 
-    checkoutSection.innerHTML += finalCheckout
-
-    // return finalCheckout
+    totalPrice()
+    checkoutSection.innerHTML = finalCheckout
 }
 
+function removeItem(removeId) {
+    console.log("remove : " + removeId)  
+    const findIndex = orderedItems.findIndex(item => item.id === removeId)
+    findIndex !== -1 && orderedItems.splice(findIndex, 1)
+    renderItems()
+}
 
-// document.addEventListener('click', function(e) {
-//     if (e.target.dataset.item) {
-//         removeItemClick(Number(e.target.dataset.item))       
-//     }
-// })
+function totalPrice() {
+    const total = orderedItems.reduce(function(total, currentItem){
+        return total + currentItem.price
+    },0)
 
-// function removeItemClick(removeId) {
-//     orderedItems.forEach(function(item) {
-//         if (item.includes(removeId)) {
-//             console.log(item.includes(removeId))
-//         }
-//     })
-// }
+    totalOrderPrice.textContent = `₹${total}`
 
-
-
-// function render(orderedItems) {
-//     checkoutSection.innerHTML += getOrderItems(orderedItems)
-// }
-
-// render()
-
-
-
-
+}
 
 complete.addEventListener('click', function(){
     modalBtn.style.display = 'inline'
@@ -110,3 +92,7 @@ payBtn.addEventListener('click', function(){
     checkoutSection.style.display = 'none'
     placeOrder.style.display = 'inline'
 })
+
+
+  // console.log(typeof item.id)
+        // console.log(typeof orderId) 
