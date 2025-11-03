@@ -53,11 +53,13 @@ main {
     font-size: 10px;
 }
 
-
-
 #checkout-section {
     display: flex;
     flex-direction: column;
+}
+
+.checkout{
+    display: none;
 }
 
 .emoji {
@@ -226,4 +228,8 @@ input[type=number] {
     font-weight: 520;
     padding: 16px 50px;
     border-radius: 5px;
+}
+
+.hidden {
+    display: none;
 }

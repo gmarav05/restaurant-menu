@@ -4,9 +4,13 @@ const items = document.getElementById("menu-items")
 const complete = document.getElementById("complete-btn")
 const modalBtn = document.getElementById("modal")
 const payBtn = document.getElementById("pay-btn")
+const checkoutOrder = document.getElementById("checkout-order")
 const checkoutSection = document.getElementById("checkout-section")
 const placeOrder = document.getElementById("place-order-title")
 const totalOrderPrice = document.getElementById("total-price")
+
+const form = document.getElementById('payment-details')
+
 let orderedItems = []
 
 menuArray.forEach(function(item) {
@@ -28,7 +32,10 @@ menuArray.forEach(function(item) {
 })
   
 document.addEventListener('click', function(e) {
-    if (e.target.dataset.item) handleClick(Number(e.target.dataset.item))     
+    if (e.target.dataset.item) {
+        handleClick(Number(e.target.dataset.item))
+        checkoutOrder.style.display = 'inline'
+    }     
     if (e.target.dataset.remove) removeItem(Number(e.target.dataset.remove))       
 })
 
@@ -79,20 +86,23 @@ function totalPrice() {
     const total = orderedItems.reduce(function(total, currentItem){
         return total + currentItem.price
     },0)
-
     totalOrderPrice.textContent = `₹${total}`
-
 }
 
 complete.addEventListener('click', function(){
     modalBtn.style.display = 'inline'
+     payBtn.disabled = true
 })
 
-payBtn.addEventListener('click', function(){
-    checkoutSection.style.display = 'none'
+form.addEventListener('input', function(){
+    if (form.checkValidity()) {
+        payBtn.disabled = false
+    }
+})
+
+payBtn.addEventListener('click', function(e){
+    e.preventDefault()
+    checkoutOrder.style.display = 'none'
     placeOrder.style.display = 'inline'
+    modalBtn.style.display = 'none'   
 })
-
-
-  // console.log(typeof item.id)
-        // console.log(typeof orderId) 

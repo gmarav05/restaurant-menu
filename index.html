@@ -21,7 +21,7 @@
         <div class="item container" id="menu-items"></div>
     </main>
 
-    <section class="checkout">
+    <section class="checkout" id="checkout-order">
 
         <h5 class="your-order">Your order</h5>
 
@@ -54,23 +54,23 @@
         <div class="modal-content">
             <h2 class="modal-title">Enter card details</h2>
             <form id="payment-details">
-                <input placeholder="Enter your name" type="text" required>
+                <input placeholder="Enter your name" type="text" required id="name-el">
 
                 <input placeholder="Enter card number" 
                 type="number" minlength=16 
-                maxlength=16 required>
+                maxlength=16 required name="fullname" id="card-el">
 
                 <input placeholder="Enter CVV" type="number" 
-                minlength="3" maxlength="4" required>
+                minlength="3" maxlength="4" required id="cvv-el">
 
-                <button class="pay-btn" id="pay-btn">Pay</button>
+                <button class="pay-btn" id="pay-btn" type="submit">Pay</button>
             </form>
         </div>
     </div>
 
 
     <div class="place-order">
-        <h2 class="place-order-title" id="place-order-title">Thanks, Your order is on its way!</h2>
+        <h2 class="place-order-title" id="place-order-title">Thanks,Your order is on its way!</h2>
     </div>
 
    
