@@ -35,6 +35,8 @@ https://github.com/user-attachments/assets/167aeab0-322c-40ba-abb8-106098b92f91
 
 - Practise of Modal. 
 
+- Practise basic Accesibility.
+
 - Forms and Inputs.
 
 - Practise of more DOM.
